@@ -42,13 +42,13 @@ function cities(){
         $("table").append(rowHtml);
     };
 
-    addColumns(cityPop);
-    addEvents();
+    //addColumns(cityPop); add: I am not sure why we have this here? Looks to me an extra part, though I migh be wrong.
+    //addEvents();
 };
 
 function addColumns(cityPop){
 
-    $('tr').each(function(i){
+    $('tr').each(function(i){ // adding a new column.
 
     	if (i == 0){
 
@@ -67,7 +67,7 @@ function addColumns(cityPop){
     			citySize = 'Large';
     		};
 
-    		$(this).append('<td>' + citySize + '</td>'); // "this" needs to be in a parenthesis, also "td" doesnt have a closing tag.
+    		$(this).append('<td>' + citySize + '</td>'); // "this" needs to be in a parenthesis, also "td" did'nt has a closing tag.
     	};
     });
 };
@@ -92,7 +92,8 @@ function addEvents(){
 		};
 
 		$(this).css('color', color);
-	})
+	});
+
 
 	function clickme(){
 
