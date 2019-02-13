@@ -26,7 +26,7 @@ function cities(){
 	];
 
 	//append the table element to the div
-	$("mydiv").append("<table>");
+	$(mydiv).append("<table>");
 
 	//append a header row to the table
 	$("table").append("<tr>");
@@ -42,8 +42,8 @@ function cities(){
         $("table").append(rowHtml);
     };
 
-    //addColumns(cityPop); add: I am not sure why we have this here? Looks to me an extra part, though I migh be wrong.
-    //addEvents();
+    addColumns(cityPop);
+    addEvents();
 };
 
 function addColumns(cityPop){
@@ -56,12 +56,11 @@ function addColumns(cityPop){
     	} else {
 
     		var citySize;
-
     		if (cityPop[i-1].population < 100000){
     			citySize = 'Small';
 
     		} else if (cityPop[i-1].population < 500000){
-    			citysize = 'Medium';
+    			citySize = 'Medium';
 
     		} else {
     			citySize = 'Large';
@@ -74,30 +73,31 @@ function addColumns(cityPop){
 
 function addEvents(){
 
-	$('#table').mouseover(function(){
+	$('table').mouseover(function(){
 
-		var color = "rgb";
+		var color = "rgb(";
 
 		for (var i=0; i<3; i++){
 
 			var random = Math.round(Math.random() * 255);
 
-			color += "random";
+			color += random
 
 			if (i<2){
 				color += ",";
 
 			} else {
-				color += ","; // Instead of comma, a closing parenthesis was inserter here.
+				color += ")"; // Instead of comma, a closing parenthesis was inserter here.
+			};
 		};
-
+		
 		$(this).css('color', color);
 	});
 
 
 	function clickme(){
 
-		alert('Hey, you clicked me and I hope you enjoyed the colors!');
+		alert('Hey, you clicked me!');
 	};
 
 	$('table').on('click', clickme);
