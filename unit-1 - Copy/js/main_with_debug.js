@@ -97,7 +97,7 @@ function addEvents(){
 
 	function clickme(){
 
-		alert('Hey, you clicked me!');
+		alert('Hey, you clicked me and I hope you enjoyed the colors!');
 	};
 
 	$('table').on('click', clickme);
