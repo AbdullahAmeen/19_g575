@@ -26,7 +26,7 @@ function cities(){
 	];
 
 	//append the table element to the div
-	$("#mydiv").append("<table>");
+	$("mydiv").append("<table>");
 
 	//append a header row to the table
 	$("table").append("<tr>");
